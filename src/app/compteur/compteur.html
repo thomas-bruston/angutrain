@@ -1,0 +1,11 @@
+<div class = "compteur">
+    <H2> compteur</H2>
+    <p class = "valeur"> {{compteur}}</p>
+
+    <button (click)="decrementer()" [disabled]="compteur === 0">-</button>
+    <button (click)="incrementer()" [disabled]="compteur === maximum">+</button>
+    <button (click)="reset()">Reset</button>
+
+    <p>Maximum : {{maximum}} </p>
+
+</div>

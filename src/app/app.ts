@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IPost,IUser,getPosts,getPostsByUser,getUserById } from './api-client';
+import { Compteur } from "./compteur/compteur";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Compteur],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
