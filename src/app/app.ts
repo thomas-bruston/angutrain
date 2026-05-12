@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { filterArray,calculerTotal,findById,Commande } from './dashboard-utils';
+import { IUtilisateur,Role,hasAccess,getUsersByRole } from './auth-utils';
 
 @Component({
   selector: 'app-root',
@@ -13,16 +13,14 @@ export class App {
 
 
   constructor() {
-    const commandes: Commande[] = [
-      { id: 1, client: "Alice", montant: 150, statut: "livrée" },
-      { id: 2, client: "Bob", montant: 80, statut: "en_attente" },
-      { id: 3, client: "Carol", montant: 320, statut: "expédiée" },
-      { id: 4, client: "David", montant: 50, statut: "annulée" },
-    ];
+   const users: IUtilisateur[] = [
+  { id: 1, nom: "Alice", email: "alice@mail.com", role: Role.ADMIN, actif: true },
+  { id: 2, nom: "Bob", email: "bob@mail.com", role: Role.USER, actif: true },
+  { id: 3, nom: "Carol", email: "carol@mail.com", role: Role.MODERATEUR, actif: false },
+];
 
-    console.log(filterArray(commandes, c => c.statut === "en_attente"));
-    console.log(calculerTotal(filterArray(commandes, c => c.statut === "livrée")));
-    console.log(findById(commandes, 3));
-    console.log(findById(commandes, 99));
+console.log(hasAccess(users[0], Role.ADMIN));   
+console.log(hasAccess(users[1], Role.ADMIN));    
+console.log(getUsersByRole(users, Role.USER));    
   }
 }
