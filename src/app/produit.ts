@@ -1,3 +1,4 @@
+// J2 - Interfaces & Classes TypeScript
 export interface IProduit {
     id:number;
     nom:string;
