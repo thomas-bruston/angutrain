@@ -9,12 +9,7 @@ import { IPost,IUser,getPosts,getPostsByUser,getUserById } from './api-client';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angutrain');
-
-
-  constructor() {
-   getPosts().then (posts=> console.log(posts))
-   getUserById(1) .then (userId=>console.log (userId))
-   getPostsByUser(1).then (posts=>console.log(posts))
-  }
-}
+  titre ='Mon porte folio Angular'
+  description = 'devellopeur Angular en formation'
+  annee = new Date().getFullYear();
+} 
