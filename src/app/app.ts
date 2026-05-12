@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {Produit} from './produit';
+import { filterArray,calculerTotal,findById,Commande } from './dashboard-utils';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +11,18 @@ import {Produit} from './produit';
 export class App {
   protected readonly title = signal('angutrain');
 
-constructor() {
-  const laptop = new Produit(1,"AppleMacBook",1200,true,"Portable");
-  const phone = new Produit(2,"Samsung",700,false,"Mobile");
-  const tablet = new Produit(3,"Ipad",600,true);
-  console.log (laptop.IsEnStock());
-  console.log (phone.IsEnStock());
-  console.log(tablet.appliquerRemise(20));
-  console.log(phone.appliquerRemise(10));
-  console.log(laptop.appliquerRemise(50));
 
-}
+  constructor() {
+    const commandes: Commande[] = [
+      { id: 1, client: "Alice", montant: 150, statut: "livrée" },
+      { id: 2, client: "Bob", montant: 80, statut: "en_attente" },
+      { id: 3, client: "Carol", montant: 320, statut: "expédiée" },
+      { id: 4, client: "David", montant: 50, statut: "annulée" },
+    ];
+
+    console.log(filterArray(commandes, c => c.statut === "en_attente"));
+    console.log(calculerTotal(filterArray(commandes, c => c.statut === "livrée")));
+    console.log(findById(commandes, 3));
+    console.log(findById(commandes, 99));
+  }
 }
