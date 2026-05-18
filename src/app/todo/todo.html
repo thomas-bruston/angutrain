@@ -1,0 +1,22 @@
+<div class="todo">
+    <h2>Mes taches</h2>
+    <div class = "filtres">
+    <button (click) = "changerFiltre('toutes')">Toutes</button>
+    <button (click) = "changerFiltre('active')">Active</button>
+    <button (click) = "changerFiltre('terminée')">Terminée</button>
+</div>
+
+@for (tache of getTachesFiltrees(); track tache.id){
+    <div class="tache">
+        @if (tache.statut === 'terminée'){
+            <span>✅ {{ tache.titre }}</span>
+        }@else{
+             <span>⏳ {{ tache.titre }}</span>
+        }
+    </div>
+}
+
+@if(getTachesFiltrees().length === 0){
+    <p>Aucune tache dans cette categorie</p>
+}
+</div>
