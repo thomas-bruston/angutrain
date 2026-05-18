@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { IPost,IUser,getPosts,getPostsByUser,getUserById } from './api-client';
 import { Compteur } from "./compteur/compteur";
 import { Todo } from './todo/todo';
+import { ListeProduits } from "./liste-produits/liste-produits";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Compteur, Todo],
+  imports: [RouterOutlet, Compteur, Todo, ListeProduits],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

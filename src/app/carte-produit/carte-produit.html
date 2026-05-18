@@ -1,0 +1,11 @@
+<div class=" carte">
+    <h3>{{nom}}</h3>
+    <p>Prix : {{prix}} € </p>
+
+    @if(disponible){
+        <button (click) = "ajouter()" >Ajouter au panier</button>
+    }@else{
+        <button disabled >Produit indisponible</button>
+    }
+
+</div>
