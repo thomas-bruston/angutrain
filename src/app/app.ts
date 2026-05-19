@@ -4,10 +4,11 @@ import { IPost,IUser,getPosts,getPostsByUser,getUserById } from './api-client';
 import { Compteur } from "./compteur/compteur";
 import { Todo } from './todo/todo';
 import { ListeProduits } from "./liste-produits/liste-produits";
+import { Profil } from './profil/profil';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Compteur, Todo, ListeProduits],
+  imports: [RouterOutlet, Compteur, Todo, ListeProduits,Profil],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

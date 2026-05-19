@@ -1,0 +1,8 @@
+<div class="profil">
+    <H1>Mon profil</H1>
+    <h2>{{nom|uppercase}}</h2>
+    <p>inscrit le : {{dateInscription|date:'dd/MM/yyyy'}} </p>
+    <p>{{dateInscription|ago}}</p>
+    <p>salaire: {{ salaire|currency :'EUR'}}</p>
+    <p>bio : {{ bio| slice: 0:50}}...</p>
+</div>
