@@ -1,6 +1,6 @@
 <div>
     <h2>Nos Produits</h2>
-    <p>panier : {{panier.length}} article(s)</p>
+    <p>Total panier : {{ getNbArticles() }}</p>
 
     <div class="liste">
         @for (produit of produits; track produit.id){
@@ -9,7 +9,7 @@
             [nom] = "produit.nom"
             [prix] = "produit.prix"
             [disponible] = "produit.disponible"
-            (ajouterAuPanier) = "onAjout($event)">
+            (ajouterAuPanier) = "onAjout(produit)">
             </app-carte-produit>
         }
     </div>

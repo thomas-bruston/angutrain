@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CarteProduit } from '../carte-produit/carte-produit';
+import { Panier } from '../panier';
 
 interface IProduit{
   id : number;
@@ -24,11 +25,15 @@ export class ListeProduits {
 
   ];
 
-  panier : string[] = [];
+  constructor(private panier : Panier) {}
 
-  onAjout(nomProduit : string):void{
-    this.panier.push(nomProduit);
-    console.log('Panier : ', this.panier)
+  onAjout(produit : IProduit):void{
+    this.panier.ajouter(produit);
+    console.log('Panier : ', this.panier.getArticles())
+    console.log ('total:', this.panier.total(), '€')
+  }
+  getNbArticles() : number{
+    return this.panier.total();
   }
 
 }
