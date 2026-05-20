@@ -6,10 +6,11 @@ import { Todo } from './todo/todo';
 import { ListeProduits } from "./liste-produits/liste-produits";
 import { Profil } from './profil/profil';
 import { Posts } from './posts/posts';
+import { Notifications } from './notifications/notifications';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Compteur, Todo, ListeProduits,Profil,Posts],
+  imports: [RouterOutlet, Compteur, Todo, ListeProduits,Profil,Posts,Notifications],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

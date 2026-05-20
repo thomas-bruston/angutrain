@@ -1,0 +1,20 @@
+<div class = notifications>
+    <H1>Notifications</H1>
+    <div class = boutons>
+         <button (click)="ajouterSucces()">✅ Succès</button>
+         <button (click)="ajouterErreur()">❌ Erreur</button>
+         <button (click)="ajouterInfos()"> ℹ️ Infos</button>
+    </div>
+
+    @if(notifications.length === 0){
+        <p>Aucune notifications</p>
+        
+    }
+    @for (notif of notifications; track notif.id){
+        <div class = notif>
+            <span>{{notif.message}}</span>
+            <button (click)="supprimer(notif.id)">x</button>
+
+        </div>
+    }
+</div>
