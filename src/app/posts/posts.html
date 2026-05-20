@@ -1,10 +1,19 @@
 <div>
     <H1>Liste des posts</H1>
-    @for (post of posts ; track post.id){
-        <div class="post">
-            <h3>{{post.title}}</h3>
-            <p>{{post.body}}</p>
+   
+    <input
+    type="text"
+    placeholder="Rechercher un post..."
+    [(ngModel)]="recherche"
+    (input)="onRecherche()">
 
-        </div>
-    }
+    <p>{{postsFiltres.length}} résultat(s)</p>
+
+     @for (post of postsFiltres; track post.id) {
+       <div class="post">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+    </div>
+  }
+
 </div>
