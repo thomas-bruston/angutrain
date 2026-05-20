@@ -1,0 +1,10 @@
+<div>
+    <H1>Liste des posts</H1>
+    @for (post of posts ; track post.id){
+        <div class="post">
+            <h3>{{post.title}}</h3>
+            <p>{{post.body}}</p>
+
+        </div>
+    }
+</div>

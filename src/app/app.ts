@@ -5,10 +5,11 @@ import { Compteur } from "./compteur/compteur";
 import { Todo } from './todo/todo';
 import { ListeProduits } from "./liste-produits/liste-produits";
 import { Profil } from './profil/profil';
+import { Posts } from './posts/posts';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Compteur, Todo, ListeProduits,Profil],
+  imports: [RouterOutlet, Compteur, Todo, ListeProduits,Profil,Posts],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
