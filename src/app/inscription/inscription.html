@@ -1,0 +1,61 @@
+<div class="inscription">
+    <H2>creer un compte</H2>
+
+    <form #inscriptionForm ="ngForm" (ngSubmit)="onSubmit()">
+
+
+<div>
+    <label for="nom"></label>
+    <input
+    type = "text"
+    [(ngModel)] = "formData.nom"
+    name = "nom"
+    #nomRef = "ngModel"
+    required
+    minlength="3">
+
+    @if (nomRef.invalid && nomRef.touched){
+        <p>Nom requis 3 lettres minimum</p>
+
+    }
+
+</div>
+
+<div>
+    <label for="email"></label>
+    <input
+    type ="text"
+    [(ngModel)] = "formData.email"
+    name = "email"
+    #emailRef = "ngModel"
+    required
+    email>
+    @if ( emailRef.invalid && emailRef.touched){
+    <p>Email invalide</p>}
+</div>
+
+<div>
+    <label for="mot de passe"></label>
+<input 
+type="password"
+[(ngModel)]= "formData.motDePasse"
+name= "motDePasse"
+#mdpRef = "ngModel"
+required
+minlength="6"
+>
+@if ( mdpRef.invalid && mdpRef.touched ){
+    <p>Mot de passe requis, minimum 6 caracteres</p>
+
+}
+</div>
+
+<button type="submit" [disabled]="inscriptionForm.invalid">S'inscrire</button>
+
+</form>
+
+@if (submitted) {
+    <p>inscription reussie {{formData.nom}}</p>
+}
+
+
