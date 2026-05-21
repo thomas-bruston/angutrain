@@ -6,6 +6,7 @@ import { Notifications } from './notifications/notifications';
 import { Posts } from './posts/posts';
 import { Profil } from './profil/profil';
 import { Todo } from './todo/todo';
+import { PostDetail } from './post-detail/post-detail';
 
 
 
@@ -17,5 +18,5 @@ export const routes: Routes = [
     {path: 'posts' , component:Posts},
     {path: 'Profil' , component:Profil},
     {path:'todo' , component:Todo},
-    
+    {path:'posts/:id' , component:PostDetail}
 ];

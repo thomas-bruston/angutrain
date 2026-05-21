@@ -1,0 +1,10 @@
+<div>
+    @if (post){
+        <h1>{{post.title}}</h1>
+        <p>{{post.body}}</p>
+        <a routerLink="/posts">Retour aux posts</a>
+
+    } @else{
+        <p>chargement...</p>
+    }
+</div>

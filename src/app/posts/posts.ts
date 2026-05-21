@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post-service';
 import { FormsModule } from '@angular/forms';
 import { map } from 'rxjs/operators';
+import { RouterLink } from '@angular/router';
 
 interface IPost{
   id : number,
@@ -13,7 +14,7 @@ interface IPost{
 @Component({
   selector: 'app-posts',
   standalone : true,
-  imports: [FormsModule],
+  imports: [FormsModule,RouterLink],
   templateUrl: './posts.html',
   styleUrl: './posts.css',
 })
