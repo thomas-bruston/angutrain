@@ -7,10 +7,11 @@ import { ListeProduits } from "./liste-produits/liste-produits";
 import { Profil } from './profil/profil';
 import { Posts } from './posts/posts';
 import { Notifications } from './notifications/notifications';
+import { Blog } from "./blog/blog";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Compteur, Todo, ListeProduits,Profil,Posts,Notifications],
+  imports: [RouterOutlet, Compteur, Todo, ListeProduits, Profil, Posts, Notifications, Blog],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,30 @@
+<div class="blog">
+    <h1>Mon Blog</h1>
+
+    <input
+    type="text"
+    placeholder="Rechercher un article"
+    [(ngModel)]="recherche"
+    (input)="onRecherche()">
+
+    <p>{{articlesFiltres.length}} article(s)</p>
+
+
+    @if (articleSelectionne) {
+        <div class="detail">
+            <h2>{{articleSelectionne.title}}</h2>
+            <p>{{articleSelectionne.body}}</p>
+            <button (click)="fermerDetail()">Retour</button>
+        </div>
+    } @else {
+    <div class="liste">
+    @for (article of articlesFiltres; track article.id) {
+        <app-article-card
+        [article] = "article"
+        (voirDetail) = "onVoirDetail($event)">
+    </app-article-card>
+    }
+</div>
+    }
+
+</div>
