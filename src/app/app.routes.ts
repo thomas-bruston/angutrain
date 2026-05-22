@@ -9,6 +9,9 @@ import { Todo } from './todo/todo';
 import { PostDetail } from './post-detail/post-detail';
 import { Inscription } from './inscription/inscription';
 import { Commande } from './commande/commande';
+import { Login } from './login/login';
+import { Admin } from './admin/admin';
+import { authGuard } from './auth-guard';
 
 
 
@@ -22,5 +25,7 @@ export const routes: Routes = [
     {path: 'todo' , component:Todo},
     {path: 'posts/:id' , component:PostDetail},
     {path: 'inscription' , component:Inscription},
-    {path: 'commande' , component:Commande}
+    {path: 'commande' , component:Commande},
+    {path: 'login' , component:Login},
+    {path: 'admin' , component:Admin,canActivate:[authGuard]}
 ];
