@@ -12,6 +12,7 @@ import { Commande } from './commande/commande';
 import { Login } from './login/login';
 import { Admin } from './admin/admin';
 import { authGuard } from './auth-guard';
+import { PanierNgrx } from './panier-ngrx/panier-ngrx';
 
 
 
@@ -27,5 +28,6 @@ export const routes: Routes = [
     {path: 'inscription' , component:Inscription},
     {path: 'commande' , component:Commande},
     {path: 'login' , component:Login},
-    {path: 'admin' , component:Admin,canActivate:[authGuard]}
+    {path: 'admin' , component:Admin,canActivate:[authGuard]},
+    {path: 'panier-ngrx' , component : PanierNgrx}
 ];

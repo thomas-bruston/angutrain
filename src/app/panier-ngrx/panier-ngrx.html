@@ -1,0 +1,25 @@
+<div class="panier">
+    <h2>Produits disponibles</h2>
+    
+        @for(produit of produits ; track produit.id){
+        <div>
+            <p>{{produit.nom}}</p>
+            <p>{{produit.prix}} € </p>
+            <button (click)="ajouter(produit)">Ajouter</button>
+        </div>}
+    
+    <h2>Mon panier</h2>
+
+    @for (article of articles$ | async; track article.id) {
+        <div>
+            <p>{{article.nom}}</p>
+            <p>{{article.prix}} € </p>
+            <button (click)="supprimer(article.id)">Supprimer mon article</button>
+        </div>
+    }
+
+    <p>Total : {{total$ | async }}€</p>
+    <button (click)="vider()">Vider le panier </button>
+        
+   
+
