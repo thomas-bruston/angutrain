@@ -1,0 +1,43 @@
+<div class="commande">
+    <h2>Formulaire de commande</h2>
+    <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+      <div>
+      <label for="nom">Nom</label>
+      <input type="text" formControlName="nom">
+      @if (form.get('nom')?.invalid && form.get('nom')?.touched) {
+        <p>Nom requis (minimum 3 caractères)</p>
+      }
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="text" formControlName="email">
+        @if (form.get('email')?.invalid && form.get('email')?.touched) {
+            <p> Email invalide</p>
+        }
+    </div>
+
+    <div>
+        <label for="adresse">adresse</label>
+        <input type="text" formControlName ="adresse">
+        @if ( form.get('adresse')?.invalid && form.get('adresse')?.touched){
+            <p>Adresse requise</p>
+        }
+    </div>
+
+    <div>
+        <label for="telephone">Numero de telephone</label>
+        <input type="text" formControlName = "telephone">
+        @if (form.get('telephone')?.invalid && form.get('telephone')?.touched) {
+            <p>Numero de telephone invalide (10 chiffres)</p>
+        }
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Commander</button>
+
+    </form>
+
+    @if (submitted) {
+        <p>Commande envoyée pour {{form.get('nom')?.value }} ! </p>
+    }
+</div>

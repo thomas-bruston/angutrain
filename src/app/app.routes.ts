@@ -8,6 +8,7 @@ import { Profil } from './profil/profil';
 import { Todo } from './todo/todo';
 import { PostDetail } from './post-detail/post-detail';
 import { Inscription } from './inscription/inscription';
+import { Commande } from './commande/commande';
 
 
 
@@ -15,10 +16,11 @@ export const routes: Routes = [
     {path: '' , component:Accueil},
     {path: 'blog' , component:Blog},
     {path: 'liste-produits' , component:ListeProduits},
-    {path:'notifications' , component:Notifications},
+    {path: 'notifications' , component:Notifications},
     {path: 'posts' , component:Posts},
     {path: 'Profil' , component:Profil},
-    {path:'todo' , component:Todo},
-    {path:'posts/:id' , component:PostDetail},
-    {path:'inscription' , component:Inscription}
+    {path: 'todo' , component:Todo},
+    {path: 'posts/:id' , component:PostDetail},
+    {path: 'inscription' , component:Inscription},
+    {path: 'commande' , component:Commande}
 ];
