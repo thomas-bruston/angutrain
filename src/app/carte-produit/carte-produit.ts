@@ -1,9 +1,10 @@
-import { Component,Input,Output,EventEmitter } from '@angular/core';
+import { Component,Input,Output,EventEmitter,ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-carte-produit',
   standalone : true,
   imports: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './carte-produit.html',
   styleUrl: './carte-produit.css',
 })
