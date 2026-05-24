@@ -1,11 +1,12 @@
 <div class = "compteur">
     <H2> compteur</H2>
-    <p class = "valeur"> {{compteur}}</p>
+        <p>Progression : {{progression()}} % </p>
 
-    <button (click)="decrementer()" [disabled]="compteur === 0">-</button>
-    <button (click)="incrementer()" [disabled]="compteur === maximum">+</button>
-    <button (click)="reset()">Reset</button>
+    <button (click)="incrementer()" [disabled]="estAuMax()">ajouter</button>
+    <button (click)="decrementer()" [disabled]="estAZero()">diminuer</button>
+    <button (click)="reset()">reset</button>
 
-    <p>Maximum : {{maximum}} </p>
-
+    @if(estAuMax()){
+        <p>Maximum atteint !</p>
+}
 </div>
