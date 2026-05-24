@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideStore } from '@ngrx/store';
+import { panierReducer } from '../store/panier.reducer';
 import { PanierNgrx } from './panier-ngrx';
 
 describe('PanierNgrx', () => {
@@ -8,9 +9,9 @@ describe('PanierNgrx', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PanierNgrx]
-    })
-    .compileComponents();
+      imports: [PanierNgrx],
+      providers: [provideStore({ panier: panierReducer })] // ← ici
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PanierNgrx);
     component = fixture.componentInstance;
